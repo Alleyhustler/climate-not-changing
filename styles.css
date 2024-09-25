@@ -1,0 +1,228 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d;
+    color: #c0c0c0;
+    height: 100vh;
+}
+
+/* Cool animated header */
+.cool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(45deg, #000000, #2e2e2e);
+    border-bottom: 2px solid #00ff00;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00ff00;
+    position: relative;
+    animation: glitch 1.5s infinite alternate;
+    text-shadow: 0px 0px 10px #00ff00, 0 0 20px #ff0000;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #ff0000;
+    }
+    50% {
+        text-shadow: 2px 2px 2px #00ff00, -2px -2px 3px #ff0000;
+        transform: skew(1deg, -1deg);
+    }
+    100% {
+        text-shadow: 0px 0px 10px #ff0000, -1px -1px 15px #00ff00;
+        transform: skew(-1deg, 1deg);
+    }
+}
+
+/* Social Icons */
+.socials a {
+    margin: 0 10px;
+    color: #c0c0c0;
+    font-size: 1.8rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socials a:hover {
+    color: #00ff00;
+    transform: scale(1.3);
+}
+
+/* Banner video container */
+.banner-video-container {
+    position: relative;
+    height: 80vh; /* Adjust height as necessary */
+    overflow: hidden;
+}
+
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire section */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ff00; /* Neon green text */
+    text-align: center;
+    text-shadow: 0px 0px 10px #00ff00, 0px 0px 20px #ff0000;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+}
+
+/* Responsive behavior for mobile devices */
+@media (max-width: 768px) {
+    .cool-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .socials a {
+        font-size: 2rem;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tokenomics Section */
+.tokenomics-section {
+    background-color: #1a1a1a; /* Dark background */
+    color: #c0c0c0; /* Light text color */
+    padding: 40px;
+    text-align: center;
+    border-top: 2px solid #00ff00; /* Neon green border at the top */
+}
+
+.tokenomics-section h1 {
+    font-size: 2.5rem;
+    color: #00ff00; /* Neon green title */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #ff0000;
+}
+
+.tokenomics-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.tokenomics-table th, .tokenomics-table td {
+    border: 1px solid #00ff00; /* Neon green borders */
+    padding: 15px;
+    text-align: center;
+}
+
+.tokenomics-table th {
+    background-color: #2e2e2e; /* Darker background for headers */
+    color: #00ff00; /* Neon green text */
+}
+
+.tokenomics-table tr:nth-child(even) {
+    background-color: #333333; /* Slight background difference for alternating rows */
+}
+
+.tokenomics-table tr:hover {
+    background-color: #444444; /* Highlight on hover */
+}
+
+.tokenomics-table td {
+    color: #c0c0c0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tokenomics-table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .tokenomics-section h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Social Icons in the Banner */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-icons a img, .contract-address img {
+    width: 40px; /* Icon size */
+    height: 40px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icons a:hover img, .contract-address:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+    opacity: 0.8;
+}
+
+.contract-address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #00ff00;
+    text-shadow: 0px 0px 10px #00ff00, 0 0 20px #ff0000;
+}
+
+.contract-address span {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contract-address {
+        font-size: 1.2rem;
+    }
+}
